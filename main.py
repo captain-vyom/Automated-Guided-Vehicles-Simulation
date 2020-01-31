@@ -19,8 +19,8 @@ import pdb
 def main():
 
     # config and map
-    if os.path.exists(os.getcwd()+ "\\"+"SnapShots"):
-        shutil.rmtree(os.getcwd()+ "\\"+"SnapShots")
+    if os.path.exists(os.getcwd()+ "//"+"SnapShots"):
+        shutil.rmtree(os.getcwd()+ "//"+"SnapShots")
     os.mkdir('SnapShots')
     vertex_layer_shift = ConfigManager.get_vertex_layer_shift() #
     map_original,map_nodes,node_distance,buffer_list_dic,boundary_nodes_x,boundary_nodes_y = ConfigManager.load_config() #buffer_list_dic:key is station vertex and value is buffer vertex
