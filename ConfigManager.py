@@ -23,7 +23,7 @@ vertex_layer_shift = None
 
 def get_vertex_layer_shift():
     current_path = os.getcwd()
-    config_file_path = current_path + "\config.ini"
+    config_file_path = current_path + "/config.ini"
     print('loading config file at path: ' + config_file_path)
     config_reader = configparser.ConfigParser()
     config_reader.read(config_file_path)  #
@@ -56,7 +56,7 @@ def convert_point_coordinates(str_point):
 def read_config_info():
     try:
         current_path = os.getcwd()
-        config_file_path = current_path + "\config.ini"
+        config_file_path = current_path + "/config.ini"
         config_info = open(config_file_path).read()
         return config_info
 
@@ -69,7 +69,7 @@ def read_config_info():
 def load_config():
     try:
         current_path = os.getcwd()
-        config_file_path = current_path + "\config.ini"
+        config_file_path = current_path + "/config.ini"
         print('loading config file at path: ' + config_file_path)
         config_reader = configparser.ConfigParser()
         config_reader.read(config_file_path) #
@@ -509,7 +509,7 @@ def get_boundary_nodes(node_number_col,node_number_row,map_nodes,boundary_x,boun
 def get_station_except_edge(column_num):
     station_except_edge={}
     current_path = os.getcwd()
-    config_file_path = current_path + "\config.ini"
+    config_file_path = current_path + "/config.ini"
     print('loading config file at path: ' + config_file_path)
     config_reader = configparser.ConfigParser()
     config_reader.read(config_file_path)  #
