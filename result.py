@@ -192,15 +192,16 @@ def background(boundary_nodes_x,boundary_nodes_y):
 
         #cv2.destroyAllWindows()
     except Exception as e:
-        #print(e)
+        print(e)
         sys.exit(1)  # fatal error, need exit the program
 
 def agvshelf(curfile):
     try:
-        current_path = os.getcwd()
-        file_path = current_path + "/SnapShots/2018-4-10_14-49-20_673.txt"
+        #current_path = os.getcwd()
+        #file_path = current_path + "/SnapShots/2018-4-10_14-49-20_673.txt"
         config_reader = configparser.ConfigParser()
-        config_reader.read(file_path)
+        #config_reader.read(file_path)
+        onfig_reader.read(curfile)
 
         list, stime,scount = AuxiliaryModule.getAgvShelfInfoFromFile(curfile)
         for index in range(len(list)):
@@ -251,7 +252,7 @@ def agvshelf(curfile):
             raise Exception()
         # cv2.destroyAllWindows()
     except Exception as e:
-        #print(e)
+        print(e)
         sys.exit(1)  # fatal error, need exit the program
 
 
@@ -380,7 +381,7 @@ def write_simulation_results_to_file(simulation_total_time,grid_length,agv_numbe
                                      simulation_start_time,efficient_info,agv_finished_package_count,agv_wait_times):
     simulation_end_time = time.time()
     current_path = os.getcwd()
-    file_path = current_path + "\\" + "result information for analysis.txt"
+    file_path = current_path + "//" + "result information for analysis.txt"
     #
     with open(file_path,'w') as f:
         f.write('simulation_time = ' + str(simulation_total_time) + ' seconds\n')
