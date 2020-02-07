@@ -129,7 +129,7 @@ def wall_street_distance(column_number,start_vertex,end_vertes):
 
 def getAllFileName(path):
     lists = os.listdir(path)  # 列出目录的下所有文件和文件夹保存到lists
-    lists.sort(key=lambda fn: os.path.getmtime(path + "\\" + fn))  # 按时间排序
+    lists.sort(key=lambda fn: os.path.getmtime(path + "//" + fn))  # 按时间排序
     return lists
 
 def getCurFileName(path):
@@ -137,15 +137,15 @@ def getCurFileName(path):
     file_new = os.path.join(path, lists[-1])
     return file_new
 
-def getAgvShelfInfoFromFile(filename):
+def getAgvShelfInfoFromFile(curfile):
     try:
         current_path = os.getcwd()
         config_reader = configparser.ConfigParser()
         file_path = current_path + "/config.ini"
         config_reader.read(file_path)
         column_number=int(config_reader.get('map', 'column_number'))
-        file_path = current_path + filename
-        config_reader.read(file_path)
+        #file_path = current_path + filename
+        config_reader.read(curfile)
         list = {}
 
         listindex = -1
@@ -188,7 +188,7 @@ def getAgvShelfInfoFromFile(filename):
         return list,stime,scount
         # cv2.destroyAllWindows()
     except Exception as e:
-        #print(e)
+        print(e)
         sys.exit(1)  # fatal error, need exit the program
 
 '''
